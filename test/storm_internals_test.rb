@@ -1,13 +1,13 @@
-require "minitest/autorun"
-require "twitter_client/storm"
+require 'minitest/autorun'
+require 'twitter_client/storm'
 
 class StormSpy < TwitterClient::Storm
-  def prepend_test(i)
-    prepend(i)
+  def prepend_test(index)
+    prepend(index)
   end
 
-  def pager_test(i)
-    pager(i)
+  def pager_test(index)
+    pager(index)
   end
 end
 

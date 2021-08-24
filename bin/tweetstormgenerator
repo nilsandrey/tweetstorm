@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-$:.unshift(File.expand_path(File.join("..", "lib"), __dir__))
+$:.unshift(File.expand_path(File.join('..', 'lib'), __dir__))
 
-require "main"
+require 'main'
 Main.new($stdout).run

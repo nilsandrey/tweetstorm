@@ -1,7 +1,9 @@
-require "exceptions/invalid_parameters"
-require "exceptions/empty_parameters"
-require "twitter_client/storm"
+require 'exceptions/invalid_parameters'
+require 'exceptions/empty_parameters'
+require 'twitter_client/storm'
 
+##
+# Used as a simple entry point to the CLI app.
 class Main
   attr_reader :output, :parameters
 
@@ -27,11 +29,7 @@ class Main
   def read_parameter
     @parameters = []
     ARGV.each { |option| parameters.push(option) }
-    raise Exceptions::InvalidParameters.new if parameters.length > 1
-    raise Exceptions::EmptyParameters.new if parameters.length == 0
-  end
-
-  def example
-    @example ||= Example.new
+    raise Exceptions::InvalidParameters if parameters.length > 1
+    raise Exceptions::EmptyParameters if parameters.length.zero?
   end
 end
