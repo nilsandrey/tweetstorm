@@ -46,3 +46,12 @@ Magna eros augue tellus leo. Nisl massa auctor sollicitudin dolor placerat apten
 ## License
 
 This project is licensed under the MIT License - see the [license.md](license.md) file for details.
+
+## Roadmap 
+
+Possible improvements:
+
+- We simplify the current implementation by considering the pager size as constant to the size of the biggest pager (2/100 is shorter than 150/200, but assumed the larger for all tweets in the thread), also I didn't take into account yet other possible restrictions users could use like don't cut words or URLs and counting URLs with the shorted-URL size like Twitter when the content have URLs. In such cases, the model probably should change to have a Tweet entity pointing internally to more diverse char positions in the main string. Until now, there's no need to cut the text itself and reproduce new strings saving the overhead that could cause.
+- The obvious integration with the Twitter API.
+- For CLI applications, we could use the [Thor](https://github.com/rails/thor) gem. It's widely used, including Rails for the classic Rails CLI. That could simplify the CLI implementation providing more features if you think on more commands an options. Posible options: Position of the pager, export tweets content to different formats, etc. 
+
